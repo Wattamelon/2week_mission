@@ -101,4 +101,77 @@ Fast-forward
 * 02fd73a (origin/main) update
 * fb00abc first commit
 
-4. 
+4. menu.py 입력 공백 제거 기능 추가
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+* main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git checkout -b fix-input-strip
+새로 만든 'fix-input-strip' 브랜치로 전환합니다
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+* fix-input-strip
+  main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % python main.py                 
+=============================
+2주차 과제 퀴즈풀이
+안내 : 코디세이 2주차 과제용 퀴즈입니다. 숫자를 선택해주세요.
+=============================
+1. 퀴즈 풀기
+2. 퀴즈 추가
+3. 퀴즈 목록
+4. 점수 확인
+5. 종료
+원하는 메뉴 번호를 입력하세요.
+  1  
+=============================
+퀴즈 풀기
+=============================
+=============================
+2주차 과제 퀴즈풀이
+안내 : 코디세이 2주차 과제용 퀴즈입니다. 숫자를 선택해주세요.
+=============================
+1. 퀴즈 풀기
+2. 퀴즈 추가
+3. 퀴즈 목록
+4. 점수 확인
+5. 종료
+원하는 메뉴 번호를 입력하세요.
+5
+=============================
+프로그램을 종료합니다.
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git add .
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git commit -m "fix : 메뉴 입력 공백 처리" 
+[fix-input-strip 899d833] fix : 메뉴 입력 공백 처리
+ 6 files changed, 46 insertions(+), 31 deletions(-)
+ create mode 100644 src/__init__.py
+ create mode 100644 src/__pycache__/__init__.cpython-312.pyc
+ create mode 100644 src/__pycache__/menu.cpython-312.pyc
+ rename src/{main.py => menu.py} (94%)
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git checkout main
+'main' 브랜치로 전환합니다
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git merge fix-input-strip
+업데이트 중 b69912f..899d833
+Fast-forward
+ docs/git.md                              |  43 ++++++++++++++++++++++++++++++++++++++++++-
+ main.py                                  |  28 ++--------------------------
+ src/__init__.py                          |   0
+ src/__pycache__/__init__.cpython-312.pyc | Bin 0 -> 175 bytes
+ src/__pycache__/menu.cpython-312.pyc     | Bin 0 -> 1987 bytes
+ src/{main.py => menu.py}                 |   6 ++----
+ 6 files changed, 46 insertions(+), 31 deletions(-)
+ create mode 100644 src/__init__.py
+ create mode 100644 src/__pycache__/__init__.cpython-312.pyc
+ create mode 100644 src/__pycache__/menu.cpython-312.pyc
+ rename src/{main.py => menu.py} (94%)
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git push origin main
+오브젝트 나열하는 중: 15, 완료.
+오브젝트 개수 세는 중: 100% (15/15), 완료.
+Delta compression using up to 8 threads
+오브젝트 압축하는 중: 100% (10/10), 완료.
+오브젝트 쓰는 중: 100% (10/10), 3.12 KiB | 3.12 MiB/s, 완료.
+Total 10 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Wattamelon/2week_mission.git
+   b69912f..899d833  main -> main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % 
