@@ -43,3 +43,21 @@ branch 'main' set up to track 'origin/main'.
 
 img2
 
+
+2. 메뉴화면 브랜치 생성 및 원격저장소 push
+
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch feature-menu
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+* main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git checkout feature-menu
+'feature-menu' 브랜치로 전환합니다
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git push origin feature-menu
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'feature-menu' on GitHub by visiting:
+remote:      https://github.com/Wattamelon/2week_mission/pull/new/feature-menu
+remote: 
+To https://github.com/Wattamelon/2week_mission.git
+ * [new branch]      feature-menu -> feature-menu
+(base) melon@munseongon-ui-MacBookAir 2week_mission % 
