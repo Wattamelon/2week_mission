@@ -61,3 +61,44 @@ remote:
 To https://github.com/Wattamelon/2week_mission.git
  * [new branch]      feature-menu -> feature-menu
 (base) melon@munseongon-ui-MacBookAir 2week_mission % 
+
+3. menu 기능 구현 후 main 브랜치 merge
+(base) melon@munseongon-ui-MacBookAir src % git add .
+(base) melon@munseongon-ui-MacBookAir src % git commit -m "feat: 메뉴 선택 및 예외처리" 
+[feature-menu b69912f] feat: 메뉴 선택 및 예외처리
+ 1 file changed, 45 insertions(+)
+ create mode 100644 src/main.py
+(base) melon@munseongon-ui-MacBookAir src % git push origin feature-menu
+오브젝트 나열하는 중: 14, 완료.
+오브젝트 개수 세는 중: 100% (14/14), 완료.
+Delta compression using up to 8 threads
+오브젝트 압축하는 중: 100% (9/9), 완료.
+오브젝트 쓰는 중: 100% (10/10), 511.05 KiB | 19.66 MiB/s, 완료.
+Total 10 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/Wattamelon/2week_mission.git
+   02fd73a..b69912f  feature-menu -> feature-menu
+(base) melon@munseongon-ui-MacBookAir src % git checkout main
+'main' 브랜치로 전환합니다
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+(base) melon@munseongon-ui-MacBookAir src % git merge feature-menu
+업데이트 중 02fd73a..b69912f
+Fast-forward
+ "2\354\243\274\354\260\250 \354\236\205\355\225\231 \354\227\260\354\210\230.pdf" | Bin 0 -> 788212 bytes
+ docs/git.md                                                                       |  18 ++++++++++++++++++
+ main.py                                                                           |  27 ++++++++++++++++++++++++++-
+ src/main.py                                                                       |  45 +++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 89 insertions(+), 1 deletion(-)
+ create mode 100644 "2\354\243\274\354\260\250 \354\236\205\355\225\231 \354\227\260\354\210\230.pdf"
+ create mode 100644 src/main.py
+(base) melon@munseongon-ui-MacBookAir src % git branch
+
+  feature-menu
+* main
+(base) melon@munseongon-ui-MacBookAir src % git log --oneline --graph
+* b69912f (HEAD -> main, origin/feature-menu, feature-menu) feat: 메뉴 선택 및 예외처리
+* 6c02a17 feat:메뉴화면 출력 추가
+* 02fd73a (origin/main) update
+* fb00abc first commit
+
+4. 

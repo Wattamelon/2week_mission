@@ -1,7 +1,7 @@
 
 
 
-def main():
+def menu():
     while True:
         print("=============================")
         print("2주차 과제 퀴즈풀이")
@@ -14,7 +14,7 @@ def main():
         print("5. 종료")
         try: 
             print("원하는 메뉴 번호를 입력하세요.")
-            tmp = int(input())
+            tmp = int(input().strip())
             print("=============================")
             if tmp == 1:
                 print("퀴즈 풀기")
@@ -41,5 +41,3 @@ def main():
         print("=============================")
 
 
-if __name__ == '__main__':
-    main()
