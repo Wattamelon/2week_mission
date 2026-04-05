@@ -1,12 +1,6 @@
 
 {
     "quizzes" : [
-         {
-        "id" : 0 ,
-        "question" : "" ,
-        "choices" : [""] ,
-        "answer" : 0 ,
-        "hint" : ""} ,
         {
         "id" : 1 ,
         "question" : "내 이름은 무엇일까요?" ,
@@ -37,6 +31,8 @@
         "choices" : ["소주" , "맥주" , "와인" , "하이볼"] ,
         "answer" : 4 ,
         "hint" : "저는 술이 약합니다."}
-    ]
+    ] ,
+    "best_score" : 0,
+    "score_logs" : []
 
 }

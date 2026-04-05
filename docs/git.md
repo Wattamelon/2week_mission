@@ -191,3 +191,27 @@ To https://github.com/Wattamelon/2week_mission.git
    b69912f..899d833  main -> main
 (base) melon@munseongon-ui-MacBookAir 2week_mission % 
 
+
+
+
+
+5. show_quizzes 브랜치 생성 (퀴즈 목록 기능)
+
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+  fix-input-strip
+* main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch show_quizzes
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+  fix-input-strip
+* main
+  show_quizzes
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git checkout show_quizzes
+'show_quizzes' 브랜치로 전환합니다
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+  fix-input-strip
+  main
+* show_quizzes
+(base) melon@munseongon-ui-MacBookAir 2week_mission % 

@@ -1,5 +1,4 @@
-
-
+from src.show_quizzes import show
 
 def menu():
     while True:
@@ -21,7 +20,7 @@ def menu():
             elif tmp == 2:
                 print("퀴즈 추가")
             elif tmp == 3:
-                print("퀴즈 목록")
+                show() # 퀴즈목록
             elif tmp == 4:
                 print("점수 확인")
             elif tmp == 5: 
@@ -30,7 +29,7 @@ def menu():
             else:
                 print("잘못된 입력입니다. 1~5 사이의 숫자를 입력해주세요.")
         except KeyboardInterrupt:
-            print(" 입력이 중단되었습니다. 프로그램을 종료합니다.")
+            print("입력이 중단되었습니다. 프로그램을 종료합니다.")
             break
         except EOFError:
             print("입력을 받을 수 없습니다. 프로그램을 종료합니다.")
