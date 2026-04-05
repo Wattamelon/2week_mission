@@ -2,6 +2,8 @@
 
 img1
 
+
+
 (base) melon@munseongon-ui-MacBookAir 코디세이 % cd 2week_mission 
 (base) melon@munseongon-ui-MacBookAir 2week_mission % git init
 /Users/melon/Desktop/코디세이/2week_mission/.git/ 안의 빈 깃 저장소를 다시 초기화했습니다
@@ -41,7 +43,12 @@ To https://github.com/Wattamelon/2week_mission.git
 branch 'main' set up to track 'origin/main'.
 (base) melon@munseongon-ui-MacBookAir 2week_mission % 
 
+
+
 img2
+
+
+
 
 
 2. 메뉴화면 브랜치 생성 및 원격저장소 push
@@ -61,6 +68,10 @@ remote:
 To https://github.com/Wattamelon/2week_mission.git
  * [new branch]      feature-menu -> feature-menu
 (base) melon@munseongon-ui-MacBookAir 2week_mission % 
+
+
+
+
 
 3. menu 기능 구현 후 main 브랜치 merge
 (base) melon@munseongon-ui-MacBookAir src % git add .
@@ -100,6 +111,10 @@ Fast-forward
 * 6c02a17 feat:메뉴화면 출력 추가
 * 02fd73a (origin/main) update
 * fb00abc first commit
+
+
+
+
 
 4. menu.py 입력 공백 제거 기능 추가
 (base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
@@ -175,3 +190,4 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/Wattamelon/2week_mission.git
    b69912f..899d833  main -> main
 (base) melon@munseongon-ui-MacBookAir 2week_mission % 
+
