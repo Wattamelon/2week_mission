@@ -215,3 +215,96 @@ To https://github.com/Wattamelon/2week_mission.git
   main
 * show_quizzes
 (base) melon@munseongon-ui-MacBookAir 2week_mission % 
+
+
+
+
+6. show_quizzes 기능 구현 완료 및 브랜치 merge
+
+(base) melon@munseongon-ui-MacBookAir 2week_mission % python main.py 
+=============================
+2주차 과제 퀴즈풀이
+안내 : 코디세이 2주차 과제용 퀴즈입니다. 숫자를 선택해주세요.
+=============================
+1. 퀴즈 풀기
+2. 퀴즈 추가
+3. 퀴즈 목록
+4. 점수 확인
+5. 종료
+원하는 메뉴 번호를 입력하세요.
+3
+=============================
+총 5문제
+-------------------------
+ 1번 문제
+ 문제 : 내 이름은 무엇일까요?
+-------------------------
+ 2번 문제
+ 문제 : 저의 본가는 어디일까요?
+-------------------------
+ 3번 문제
+ 문제 : 저는 몇 년도에 태어났을까요?
+-------------------------
+ 4번 문제
+ 문제 : 저의 취미가 아닌 것은 무엇일까요?
+-------------------------
+ 5번 문제
+ 문제 : 제가 가장 좋아하는 주류는 어떤 종류일까요?
+-------------------------
+=============================
+=============================
+2주차 과제 퀴즈풀이
+안내 : 코디세이 2주차 과제용 퀴즈입니다. 숫자를 선택해주세요.
+=============================
+1. 퀴즈 풀기
+2. 퀴즈 추가
+3. 퀴즈 목록
+4. 점수 확인
+5. 종료
+원하는 메뉴 번호를 입력하세요.
+5
+=============================
+프로그램을 종료합니다.
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git add .
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git commit -m "Feat : 퀴즈 목록 기능 추가" 
+[show_quizzes 0b7845c] Feat : 퀴즈 목록 기능 추가
+ 4 files changed, 58 insertions(+), 11 deletions(-)
+ create mode 100644 src/show_quizzes.py
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+  fix-input-strip
+  main
+* show_quizzes
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git push origin show_quizzes
+오브젝트 나열하는 중: 14, 완료.
+오브젝트 개수 세는 중: 100% (14/14), 완료.
+Delta compression using up to 8 threads
+오브젝트 압축하는 중: 100% (8/8), 완료.
+오브젝트 쓰는 중: 100% (8/8), 1.22 KiB | 1.22 MiB/s, 완료.
+Total 8 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+remote: 
+remote: Create a pull request for 'show_quizzes' on GitHub by visiting:
+remote:      https://github.com/Wattamelon/2week_mission/pull/new/show_quizzes
+remote: 
+To https://github.com/Wattamelon/2week_mission.git
+ * [new branch]      show_quizzes -> show_quizzes
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git checkout main
+'main' 브랜치로 전환합니다
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git merge show_quizzes
+업데이트 중 12fb12b..0b7845c
+Fast-forward
+ docs/git.md         | 24 ++++++++++++++++++++++++
+ src/menu.py         |  7 +++----
+ src/show_quizzes.py | 28 ++++++++++++++++++++++++++++
+ state.json          | 10 +++-------
+ 4 files changed, 58 insertions(+), 11 deletions(-)
+ create mode 100644 src/show_quizzes.py
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git merge show_quizzes
+이미 업데이트 상태입니다.
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git push origin main  
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Wattamelon/2week_mission.git
+   12fb12b..0b7845c  main -> main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % 
