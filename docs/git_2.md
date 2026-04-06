@@ -116,3 +116,29 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/Wattamelon/2week_mission.git
    c977829..f356f05  main -> main
 (base) melon@munseongon-ui-MacBookAir 2week_mission % 
+
+
+6. QuizGame 클래스 구현 (까먹고 브랜치 안만들고 main 브랜치에서 진행)
+
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git add .
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git commit -m "Feat : play quiz 메소드 추가"
+[main 021ac59] Feat : play quiz 메소드 추가
+ 1 file changed, 43 insertions(+), 1 deletion(-)
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+  fix-input-strip
+* main
+  quiz_class
+  quiz_data
+  show_quizzes
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git push origin main
+오브젝트 나열하는 중: 7, 완료.
+오브젝트 개수 세는 중: 100% (7/7), 완료.
+Delta compression using up to 8 threads
+오브젝트 압축하는 중: 100% (4/4), 완료.
+오브젝트 쓰는 중: 100% (4/4), 1.18 KiB | 1.18 MiB/s, 완료.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Wattamelon/2week_mission.git
+   376e451..021ac59  main -> main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % 

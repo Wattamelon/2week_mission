@@ -64,4 +64,28 @@ class QuizGame:
             print(f"최고 기록입니다! 당신의 점수는 {player_score}점 입니다.")
             self.best_score = player_score
         else:
-            print(f"당신의 점수는 {player_score}점 입니다. 다음에는 최고 점수를 노려보세요!")      
+            print(f"당신의 점수는 {player_score}점 입니다. 다음에는 최고 점수를 노려보세요!")  
+        self.save_data()    
+            
+    def save_data(self):
+        save_quizzes = []
+        quizzies_sort = sorted(self.quizzes, key = lambda x : x.id)
+        for quiz in quizzies_sort:
+            quiz_dict = {}
+            quiz_dict["id"] = quiz.id
+            quiz_dict["question"] = quiz.question
+            quiz_dict["choices"] = quiz.choices
+            quiz_dict["answer"] = quiz.answer
+            quiz_dict["hint"] = quiz.hint
+            save_quizzes.append(quiz_dict)
+        save_dict = {}
+        save_dict["quizzes"] = save_quizzes
+        save_dict["best_score"] = self.best_score
+        
+        with open('state.json','w' , encoding = 'utf-8') as f :
+            json.dump(save_dict,f,indent=4,ensure_ascii=False)
+
+
+            
+        
+        
