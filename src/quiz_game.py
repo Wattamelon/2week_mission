@@ -8,7 +8,7 @@ class QuizGame:
         self.quizzes = []
         self.best_score = 0
     
-    def load_quiz(self):
+    def load_quizzes(self):
         try : 
             path = Path("state.json")
             quiz_list = []
@@ -23,3 +23,45 @@ class QuizGame:
         except : 
             self.quizzes = quiz_data()
             self.best_score = 0
+            
+    def show_quizzes(self):
+        if len(self.quizzes) == 0:
+            print("등록된 문제가 존재하지 않습니다.")
+
+        else: 
+            print(f"총 {len(self.quizzes)}문제")
+            print("-------------------------")
+
+            for i in self.quizzes :
+                print(f" {i.id}번 문제")
+                print(f" 문제 : {i.question}")
+                print("-------------------------")
+    
+    def play_quiz(self):
+        player_score = 0 
+        
+        for quiz in self.quizzes:
+            while True:
+                quiz.show_quiz()
+                try:
+                    user_answer = int(input().strip())
+                    if user_answer <= 0 or user_answer >= 5 :
+                        print("1~4 사이의 숫자를 입력 해주십시오.")
+                        continue
+                    if quiz.check_answer(user_answer):
+                        player_score += 100
+                        print("정답입니다. 점수가 100점 추가 되었습니다.")
+                        break
+                    else:
+                        player_score -= 10
+                        print("오답입니다. 점수가 10점 감소 되었습니다.")
+                        print(f"정답은 {quiz.answer}번 입니다.")
+                        break
+                except :
+                    print("올바른 숫자를 입력 해주십시오.")              
+    
+        if player_score > self.best_score :
+            print(f"최고 기록입니다! 당신의 점수는 {player_score}점 입니다.")
+            self.best_score = player_score
+        else:
+            print(f"당신의 점수는 {player_score}점 입니다. 다음에는 최고 점수를 노려보세요!")      
