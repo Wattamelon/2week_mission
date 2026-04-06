@@ -1,7 +1,8 @@
-from src.menu import menu
+from src.quiz_game import QuizGame
 
 def main():
-    menu()
+    game = QuizGame()
+    game.run_menu()
         
 
 
