@@ -142,3 +142,23 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/Wattamelon/2week_mission.git
    376e451..021ac59  main -> main
 (base) melon@munseongon-ui-MacBookAir 2week_mission % 
+
+
+
+7. save_data 메소드 구현 완료
+
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git add .  
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git commit -m "save_data 메소드 구현 완료" 
+[main 4f79a3a] save_data 메소드 구현 완료
+ 2 files changed, 51 insertions(+), 1 deletion(-)
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git push origin main
+오브젝트 나열하는 중: 11, 완료.
+오브젝트 개수 세는 중: 100% (11/11), 완료.
+Delta compression using up to 8 threads
+오브젝트 압축하는 중: 100% (6/6), 완료.
+오브젝트 쓰는 중: 100% (6/6), 1.10 KiB | 1.10 MiB/s, 완료.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/Wattamelon/2week_mission.git
+   021ac59..4f79a3a  main -> main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % 

@@ -33,7 +33,7 @@ class QuizGame:
             print("-------------------------")
 
             for i in self.quizzes :
-                print(f" {i.id}번 문제")
+                print(f" {i.id}번 문제") # 추후에 삭제할수도
                 print(f" 문제 : {i.question}")
                 print("-------------------------")
     
