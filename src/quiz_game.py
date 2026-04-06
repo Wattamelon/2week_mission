@@ -86,7 +86,37 @@ class QuizGame:
             json.dump(save_dict,f,indent=4,ensure_ascii=False)
             
     def add_quiz(self):
-        print("퀴즈 추가 미구현")
+        question_id = self.quizzes[-1].id + 1
+        print("문제를 입력하세요.")
+        question = self.check_empty("문제")
+        print("보기1 입력.")
+        c_1 = self.check_empty("보기1")
+        print("보기2 입력.")
+        c_2 = self.check_empty("보기2")
+        print("보기3 입력.")
+        c_3 = self.check_empty("보기3")
+        print("보기4 입력.")
+        c_4 = self.check_empty("보기4")
+        print("정답을 입력하세요.")
+        while True:
+            answer = input().strip()
+            if answer.isdigit():
+                answer = int(answer)
+            else:
+                print("정답은 숫자만 입력됩니다.")
+                continue
+            if answer > 0 and answer < 5:
+                break
+            else:
+                print("1~4 사이의 숫자를 입력하세요.")
+                               
+        print("힌트를 입력하세요.")
+        hint = self.check_empty("힌트")     
+        quiz = Quiz(question_id,question,[c_1,c_2,c_3,c_4],answer,hint)
+        self.quizzes.append(quiz)  
+        self.save_data()
+        print("퀴즈 추가가 완료 되었습니다.")
+        
 
     def run_menu(self):
         self.load_quizzes()
@@ -132,6 +162,14 @@ class QuizGame:
     def show_best_score(self):
         print(f"점수는 {self.best_score}점 입니다.")
 
+    def check_empty(self,kind):
+        while True :
+            text = input().strip()
+            if text == "":
+                print(f"{kind}를 다시 입력하세요. (공백 불가)")
+            else:
+                return text
+                
             
-        
+            
         
