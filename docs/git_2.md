@@ -79,3 +79,40 @@ To https://github.com/Wattamelon/2week_mission.git
   quiz_class
 * quiz_data
   show_quizzes
+
+
+5. quiz_data 병합
+
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git branch
+  feature-menu
+  fix-input-strip
+  main
+  quiz_class
+* quiz_data
+  show_quizzes
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git add .
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git commit -m "Feat : 기본 퀴즈데이터 생성" 
+[quiz_data f356f05] Feat : 기본 퀴즈데이터 생성
+ 2 files changed, 91 insertions(+)
+ create mode 100644 src/quiz_data.py
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git checkout main
+'main' 브랜치로 전환합니다
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git merge quiz_data
+업데이트 중 c977829..f356f05
+Fast-forward
+ docs/git_2.md    | 81 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ src/quiz_data.py | 10 ++++++++++
+ 2 files changed, 91 insertions(+)
+ create mode 100644 src/quiz_data.py
+(base) melon@munseongon-ui-MacBookAir 2week_mission % git push origin main
+오브젝트 나열하는 중: 10, 완료.
+오브젝트 개수 세는 중: 100% (10/10), 완료.
+Delta compression using up to 8 threads
+오브젝트 압축하는 중: 100% (6/6), 완료.
+오브젝트 쓰는 중: 100% (6/6), 1.94 KiB | 1.94 MiB/s, 완료.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Wattamelon/2week_mission.git
+   c977829..f356f05  main -> main
+(base) melon@munseongon-ui-MacBookAir 2week_mission % 
