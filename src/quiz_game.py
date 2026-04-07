@@ -2,6 +2,7 @@ from src.quiz_data import quiz_data
 from src.quiz import Quiz
 import json
 from pathlib import Path
+from random import shuffle
 
 class QuizGame:
     def __init__(self):
@@ -37,21 +38,30 @@ class QuizGame:
                 print(f" 문제 : {i.question}")
                 print("-------------------------")
     
-    def play_quiz(self):
+    def play_quiz(self,shuffled_quizzes):
         player_score = 0 
-        
-        for quiz in self.quizzes:
+        use_hint = 2
+        for quiz in shuffled_quizzes:
             while True:
                 quiz.show_quiz()
                 try:
                     user_answer = int(input().strip())
-                    if user_answer <= 0 or user_answer >= 5 :
-                        print("1~4 사이의 숫자를 입력 해주십시오.")
+                    if user_answer <= 0 or user_answer > 5 :
+                        print("1~5 사이의 숫자를 입력 해주십시오.")
                         continue
-                    if quiz.check_answer(user_answer):
+                    elif user_answer == 5 :
+                        if use_hint == 0 :
+                            print("더이상 사용 가능한 힌트가 없습니다.")
+                            continue
+                        else: 
+                            print(quiz.hint)
+                            use_hint -= 1
+                            print(f"남은 힌트 수는 {use_hint}개 입니다.")
+                            continue
+                    elif quiz.check_answer(user_answer):
                         player_score += 100
                         print("정답입니다. 점수가 100점 추가 되었습니다.")
-                        break
+                        break   
                     else:
                         player_score -= 10
                         print("오답입니다. 점수가 10점 감소 되었습니다.")
@@ -130,12 +140,17 @@ class QuizGame:
             print("3. 퀴즈 목록")
             print("4. 점수 확인")
             print("5. 종료")
+            print("=============================")
+            print("보너스 문제 존")
+            print("6. 문제 수 정하기")
             try: 
                 print("원하는 메뉴 번호를 입력하세요.")
                 tmp = int(input().strip())
                 print("=============================")
                 if tmp == 1:
-                    self.play_quiz()
+                    shuffled_quizzes = self.quizzes[:]
+                    shuffle(shuffled_quizzes)
+                    self.play_quiz(shuffled_quizzes)
                 elif tmp == 2:
                     self.add_quiz()
                 elif tmp == 3:
@@ -146,16 +161,32 @@ class QuizGame:
                     print("프로그램을 종료합니다.")
                     self.save_data()
                     break
+                elif tmp == 6:
+                    while True:
+                        print("도전할 문제 수를 입력하세요.")
+                        n = input().strip()
+                        if not n.isdigit() :
+                            print("정수를 입력 해주세요.")
+                            continue
+                        n = int(n)
+                        if n > len(self.quizzes) or n <= 0:
+                            print("도전할 문제 수가 올바르지 않습니다.")
+                            continue
+                        else:
+                            self.play_n_quizzes(n)
+                            break
                 else:
-                    print("잘못된 입력입니다. 1~5 사이의 숫자를 입력해주세요.")
+                    print("잘못된 입력입니다. 1~6 사이의 숫자를 입력해주세요.")
             except KeyboardInterrupt:
+                self.save_data()
                 print("입력이 중단되었습니다. 프로그램을 종료합니다.")
                 break
             except EOFError:
+                self.save_data()
                 print("입력을 받을 수 없습니다. 프로그램을 종료합니다.")
                 break
             except:
-                print("1~5사이의 숫자를 입력 해주세요.")
+                print("1~6사이의 숫자를 입력 해주세요.")
 
             print("=============================")
     
@@ -169,7 +200,18 @@ class QuizGame:
                 print(f"{kind}를 다시 입력하세요. (공백 불가)")
             else:
                 return text
-                
+    
+    def shuffle_quizzes(self):
+        
+        shuffled_quizzes = self.quizzes[:]
+        shuffle(shuffled_quizzes)
+        return shuffled_quizzes
+        
+        
+    def play_n_quizzes(self,n):
+        shuffled_quizzes = self.shuffle_quizzes()
+        self.play_quiz(shuffled_quizzes[:n])
+        
             
             
         

@@ -18,6 +18,7 @@ class Quiz:
         print("보기")
         for i in range(len(q)):
             print(f"{i+1}. {q[i]}")
+        print("5. 힌트")
                 
     def check_answer(self, user_answer):
         return user_answer == self.answer   
