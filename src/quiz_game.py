@@ -20,7 +20,10 @@ class QuizGame:
             for i in json_data["quizzes"]:
                 tmp = Quiz(i["id"],i["question"],i["choices"],i["answer"],i["hint"])
                 quiz_list.append(tmp)
-            self.quizzes = quiz_list
+            if len(quiz_list) < 5:
+                self.quizzes = quiz_data()
+            else:
+                self.quizzes = quiz_list
             self.best_score = json_data["best_score"]
             if "play_logs" in json_data and json_data["play_logs"] :
                 self.play_logs = json_data["play_logs"]
