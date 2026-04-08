@@ -3,12 +3,13 @@
 """
 
 class Quiz:
-    def __init__(self , id, question, choices , answer , hint  ) :
+    def __init__(self , id, question, choices , answer , hint) :
         self.id = id
         self.question = question
         self.choices = choices
         self.answer = answer 
         self.hint = hint
+
     
     
     def show_quiz(self):

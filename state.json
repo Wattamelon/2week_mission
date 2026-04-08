@@ -61,5 +61,27 @@
             "hint": "저는 술이 약합니다."
         }
     ],
-    "best_score": 300
+    "best_score": 300,
+    "play_logs": [
+        {
+            "playtime": "2026.04.08 - 12:37:16",
+            "num_solved": 5,
+            "score": 280
+        },
+        {
+            "playtime": "2026.04.08 - 12:37:26",
+            "num_solved": 5,
+            "score": 170
+        },
+        {
+            "playtime": "2026.04.08 - 12:37:39",
+            "num_solved": 3,
+            "score": 80
+        },
+        {
+            "playtime": "2026.04.08 - 12:37:47",
+            "num_solved": 2,
+            "score": 90
+        }
+    ]
 }

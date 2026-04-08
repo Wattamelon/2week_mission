@@ -3,11 +3,13 @@ from src.quiz import Quiz
 import json
 from pathlib import Path
 from random import shuffle
+import time 
 
 class QuizGame:
     def __init__(self):
         self.quizzes = []
         self.best_score = 0
+        self.play_logs = []
     
     def load_quizzes(self):
         try : 
@@ -20,11 +22,15 @@ class QuizGame:
                 quiz_list.append(tmp)
             self.quizzes = quiz_list
             self.best_score = json_data["best_score"]
+            if "play_logs" in json_data and json_data["play_logs"] :
+                self.play_logs = json_data["play_logs"]
+            else: 
+                self.play_logs = []
             
         except : 
             self.quizzes = quiz_data()
             self.best_score = 0
-            
+            self.play_logs = []
     def show_quizzes(self):
         if len(self.quizzes) == 0:
             print("등록된 문제가 존재하지 않습니다.")
@@ -69,12 +75,15 @@ class QuizGame:
                         break
                 except :
                     print("올바른 숫자를 입력 해주십시오.")              
-    
+        #break_score = False
         if player_score > self.best_score :
             print(f"최고 기록입니다! 당신의 점수는 {player_score}점 입니다.")
             self.best_score = player_score
+            #break_score = True
         else:
             print(f"당신의 점수는 {player_score}점 입니다. 다음에는 최고 점수를 노려보세요!")  
+        self.play_logs.append({"playtime" : time.strftime('%Y.%m.%d - %H:%M:%S') , "num_solved" : len(shuffled_quizzes) , "score" : player_score})
+        
         self.save_data()    
             
     def save_data(self):
@@ -91,6 +100,7 @@ class QuizGame:
         save_dict = {}
         save_dict["quizzes"] = save_quizzes
         save_dict["best_score"] = self.best_score
+        save_dict["play_logs"] = self.play_logs
         
         with open('state.json','w' , encoding = 'utf-8') as f :
             json.dump(save_dict,f,indent=4,ensure_ascii=False)
