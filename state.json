@@ -97,17 +97,6 @@
             "playtime": "2026.04.08 - 13:22:42",
             "num_solved": 5,
             "score": 170
-        },
-        {
-<<<<<<< HEAD
-            "playtime": "2026.04.08 - 13:35:00",
-            "num_solved": 3,
-            "score": 190
-=======
-            "playtime": "2026.04.08 - 14:06:14",
-            "num_solved": 5,
-            "score": 170
->>>>>>> 2051851 (update)
         }
     ]
 }
