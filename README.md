@@ -213,10 +213,10 @@ python main.py
 
 깃허브 pull & clone
 
-![클론 스크린샷](docs/clone_screenshot.png)
+![클론 스크린샷](docs/img/clone_screenshot.png)
 
 
-![push 스크린샷](docs/process_screenshot.png)
+![push 스크린샷](docs/img/process_screenshot.png)
 
 
-![pull 스크린샷](docs/pull_screenshot.png)
+![pull 스크린샷](docs/img/pull_screenshot.png)
