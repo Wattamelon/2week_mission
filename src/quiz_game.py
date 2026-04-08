@@ -34,6 +34,8 @@ class QuizGame:
             self.quizzes = quiz_data()
             self.best_score = 0
             self.play_logs = []
+            print("저장 파일을 불러오는 중 문제가 발생하여 기본 퀴즈로 복구했습니다.")
+            self.save_data()
     def show_quizzes(self):
         if len(self.quizzes) == 0:
             print("등록된 문제가 존재하지 않습니다.")
