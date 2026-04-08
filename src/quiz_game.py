@@ -153,6 +153,7 @@ class QuizGame:
             print("=============================")
             print("보너스 문제 존")
             print("6. 문제 수 정하기")
+            print("7. 문제 삭제하기")
             try: 
                 print("원하는 메뉴 번호를 입력하세요.")
                 tmp = int(input().strip())
@@ -185,8 +186,11 @@ class QuizGame:
                         else:
                             self.play_n_quizzes(n)
                             break
+                elif tmp == 7 :
+                    self.delete_quiz()
+                    
                 else:
-                    print("잘못된 입력입니다. 1~6 사이의 숫자를 입력해주세요.")
+                    print("잘못된 입력입니다. 1~7 사이의 숫자를 입력해주세요.")
             except KeyboardInterrupt:
                 self.save_data()
                 print("입력이 중단되었습니다. 프로그램을 종료합니다.")
@@ -196,7 +200,7 @@ class QuizGame:
                 print("입력을 받을 수 없습니다. 프로그램을 종료합니다.")
                 break
             except:
-                print("1~6사이의 숫자를 입력 해주세요.")
+                print("1~7사이의 숫자를 입력 해주세요.")
 
             print("=============================")
     
@@ -223,5 +227,33 @@ class QuizGame:
         self.play_quiz(shuffled_quizzes[:n])
         
             
-            
+    def delete_quiz(self):
         
+        if len(self.quizzes) == 0 :
+            print("퀴즈가 존재하지 않습니다.")
+            return
+            
+        while True : 
+            print("삭제할 문제의 번호를 입력하세요.")
+            n = self.check_empty("문제 번호")
+            if not n.isdigit():
+                print("정수를 입력하세요.")
+                continue
+            else:
+                n = int(n)
+                break
+
+
+        q_id_list = []
+        for i in self.quizzes:
+            q_id_list.append(i.id)
+        if n not in q_id_list:
+            print("선택하신 번호의 문제가 존재하지 않습니다.")
+        else:
+            for quiz in self.quizzes:
+                if quiz.id == n:
+                    self.quizzes.remove(quiz)
+                    break
+            print("선택하신 번호의 문제가 삭제 되었습니다.")
+            self.save_data()
+            
