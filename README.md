@@ -212,27 +212,11 @@ python main.py
 
 
 깃허브 pull & clone
-base) melon@munseongon-ui-MacBookAir tmp % ls
-2week_mission
-(base) melon@munseongon-ui-MacBookAir tmp % cd 2week_mission 
-(base) melon@munseongon-ui-MacBookAir 2week_mission % cat .git/config 
-[core]
-        repositoryformatversion = 0
-        filemode = true
-        bare = false
-        logallrefupdates = true
-        ignorecase = true
-        precomposeunicode = true
-[remote "origin"]
-        url = https://github.com/Wattamelon/2week_mission.git
-        fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "main"]
-        remote = origin
-        merge = refs/heads/main
-        vscode-merge-base = origin/main
-(base) melon@munseongon-ui-MacBookAir 2week_mission % cat .git/logs/HEAD
-0000000000000000000000000000000000000000 af69071407906d12d553f6d1b3d1b2f183f89c1e seongon Moon <seongon1010@gmail.com> 1775624710 +0900 clone: from https://github.com/Wattamelon/2week_mission.git
-(base) melon@munseongon-ui-MacBookAir 2week_mission % tail -n 30 .git/logs/HEAD
-0000000000000000000000000000000000000000 af69071407906d12d553f6d1b3d1b2f183f89c1e seongon Moon <seongon1010@gmail.com> 1775624710 +0900 clone: from https://github.com/Wattamelon/2week_mission.git
-(base) melon@munseongon-ui-MacBookAir 2week_mission % LS
-README.md       docs            main.py         src             state.json
+
+![클론 스크린샷](docs/clone_screenshot.png)
+
+
+![push 스크린샷](docs/process_screenshot.png)
+
+
+![pull 스크린샷](docs/pull_screenshot.png)
